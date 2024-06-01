@@ -1,0 +1,58 @@
+#imagenObjetivo {
+    width: 100vw;
+    margin-top: 10vh;
+}
+
+#movimientos {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    background-color: rgb(192, 215, 252);
+    padding: 20px;
+}
+
+#columnaIngresos {
+    background-color: rgb(150, 203, 140);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30vw;
+
+}
+
+#tituloIngresos {
+    padding: 20px 20px 20px 0px;
+    border-bottom: grey 2px solid ;
+
+}
+
+#movimientosIngresos {
+    background-color: rgb(172, 232, 202);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.filaIngresos {
+    background-color: rgb(144, 220, 220);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: grey 2px solid ;
+}
+
+.filaIngresos div {
+    padding: 10px;
+}
+
+#columnaGastos {
+    background-color: rgb(236, 170, 170);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    width: 30vw;
+}
+
+
