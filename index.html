@@ -6,44 +6,73 @@
     <title>Presupuestos</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body onload="restablecerValores()">
 
-    <h1>Presupuesto disponible</h1>
+    <section class="balanceTotal">
 
-    <!-- Aquí va la suma de gastos e ingresos, tanto juntos como por separado-->
-
-
-
-    <section id="movimientos">
-
-        <div id="columnaIngresos">
-            <div id="tituloIngresos">
-                <div>INGRESOS</div>
-
-            </div>
-
-            <div id="movimientosIngresos">
-                <div class="filaIngresos">
-                    <div>Ingreso1</div>
-                    <div>100$</div>
-                </div>
-                <div class="filaIngresos">
-                    <div>Ingreso2</div>
-                    <div>250$</div>
-                </div>
-
-            </div>
+        <h1 class="tituloPresupuesto">Presupuesto Disponible:</h1>
+        <div class="cantidadPresupuesto">1,500.00€</div>
+        <div class="balanceIngresos">
+            <div>INGRESOS</div>
+            <div>350€</div>
         </div>
-
-
-        <div id="columnaGastos">
-            <header>GASTOS</header>
+        <div id="balanceGastos" class="balanceIngresos">
+            <div>GASTOS</div>
+            <div>30€</div>
         </div>
 
     </section>
 
+    <section class="ingresar">
 
-    <img src="img\Objetivo.png" alt="Objetivo" id="imagenObjetivo">
+        <div class="mensajeError"></div> <!--Contrarresta el div del mensaje de error-->
+        <select class="signo" name="signo" id="signo">
+            <option value="positivo" selected>+</option>
+            <option value="negativo">-</option>
+        </select>
+
+        <input type="text" name="descripcionMovimiento" id="descripcionMovimiento" placeholder="Descripción movimiento">
+        <input type="number" name="dineroMovimiento" id="dineroMovimiento" placeholder="0">
+        <img src="./img/marca-de-verificacion.png" alt="boton de añadir movimiento" id="tickAdd">
+        <div id="mensajeError" class="mensajeError"></div>
+
+    </section>
+
+
+
+    <section class="movimientos">
+
+        <div class="columnaIngresos">
+            <div class="tituloIngresos">INGRESOS</div>
+            <div class="movimientosIngresos">
+                <div class="filaIngreso">
+                    <div>Ingreso1</div>
+                    <div class="dineroIngreso">+ 100.00€</div>
+                </div>
+                <div class="filaIngreso">
+                    <div>Ingreso2</div>
+                    <div class="dineroIngreso">+ 250.00€</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="columnaGastos">
+            <div class="tituloGastos">GASTOS</div>
+            <div class="movimientosIngresos">
+                <div class="filaIngreso">
+                    <div>Gasto1</div>
+                    <div class="dineroGasto">- 10.00€</div>
+                </div>
+                <div class="filaIngreso">
+                    <div>Gasto2</div>
+                    <div class="dineroGasto">- 20.00€</div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
 
     <script src="./JS/clases.js"></script>
     <script src="./JS/presupuestos.js"></script>

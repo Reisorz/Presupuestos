@@ -3,56 +3,167 @@
     margin-top: 10vh;
 }
 
-#movimientos {
+.balanceTotal {
+    width: 100vw;
+    height: auto;
+    background: linear-gradient(to right, rgb(225, 80, 75),rgb(174, 89, 181));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloPresupuesto{
+    font-size: 2.5rem;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.cantidadPresupuesto {
+    color: whitesmoke;
+    font-size: 6.5rem;
+    margin-bottom: 50px;
+}
+
+.balanceIngresos{
+    background-color: rgb(71, 180, 207);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    width: 25vw;
+    height: 85px;
+    margin-bottom: 30px;
+    padding: 0px 30px;
+    
+}
+
+#balanceGastos {
+    background-color: rgb(236, 124, 49);
+
+}
+
+.ingresar {
+    background-color: rgb(240, 241, 236);
+    width: 100vw;
+    height: 150px;
     display: flex;
     justify-content: center;
-    gap: 100px;
-    background-color: rgb(192, 215, 252);
+    align-items: center;
+    gap: 30px;
+
+}
+
+.ingresar select, input {
+    height: 60%;    
+    font-size: 2rem;
+    color: grey;
+    background-color: white;
+    box-shadow: 10px 10px 5px rgb(222, 222, 222);
+    border-radius: 10px;
+    border: none;
+
+}
+
+.signo {
+    width: 90px;
+}
+
+#descripcionMovimiento {
+    width: 600px;
+}
+
+#dineroMovimiento {
+    width: 200px;
+}
+
+#tickAdd{
+    height: 40%;
+    cursor: pointer;
+}
+
+.mensajeError {
+    width: 1vw;
+    text-wrap: nowrap;
+    color: rgb(223, 13, 13);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.movimientos {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
     padding: 20px;
 }
 
-#columnaIngresos {
-    background-color: rgb(150, 203, 140);
+.columnaIngresos {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     width: 30vw;
 
 }
 
-#tituloIngresos {
+.tituloIngresos {
     padding: 20px 20px 20px 0px;
-    border-bottom: grey 2px solid ;
+    border-bottom: rgb(201, 201, 201) 1px solid ;
+    color: rgb(71, 180, 207);
+    font-size: 2.2rem;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
-#movimientosIngresos {
-    background-color: rgb(172, 232, 202);
+.movimientosIngresos {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.filaIngresos {
-    background-color: rgb(144, 220, 220);
+.filaIngreso {
     width: 100%;
+    color: grey;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: space-between;
-    border-bottom: grey 2px solid ;
+    border-bottom: rgb(201, 201, 201) 1px solid ;
 }
 
-.filaIngresos div {
-    padding: 10px;
+.filaIngreso div {
+    padding: 30px 20px 30px 20px;
 }
 
-#columnaGastos {
-    background-color: rgb(236, 170, 170);
+.dineroIngreso {
+    color: rgb(71, 180, 207);
+}
+
+.columnaGastos {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
+    flex-direction: column;
+    justify-content: start;
     width: 30vw;
 }
 
+.tituloGastos {
+    padding: 20px 20px 20px 0px;
+    border-bottom: rgb(201, 201, 201) 1px solid ;
+    color: rgb(236, 124, 49);
+    font-size: 2.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.dineroGasto {
+    color: rgb(236, 124, 49);
+}
 
