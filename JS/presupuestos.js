@@ -14,7 +14,7 @@ function mostrarMovimientos(){
     columnasMovimientos[0].innerHTML = "";
     columnasMovimientos[1].innerHTML = "";
 
-    
+
     for (let ingresos of arrayIngresos){
         columnasMovimientos[0].innerHTML += '<div class="filaIngreso"><div>' + ingresos.descripcion + '</div><div class="dineroIngreso">+ ' + ingresos.valor + '€</div></div>';
     }
@@ -24,6 +24,47 @@ function mostrarMovimientos(){
     }
 
 }
+
+function sumarIngresos() {
+    
+    let totalIngresos = 0; 
+    for (let ingresos of arrayIngresos){
+        totalIngresos += ingresos.valor;
+        
+    } 
+    document.getElementById("ingresosTotal").innerHTML = totalIngresos + "€";
+    
+}
+
+function sumarGastos() {
+
+    let totalGastos = 0; 
+    for (let gastos of arrayGastos){
+        totalGastos += gastos.valor;
+        
+    }
+    document.getElementById("gastosTotal").innerHTML = totalGastos + "€";
+    
+}
+
+function balanceTotal (){
+
+    let totalGastos = 0; 
+    for (let gastos of arrayGastos){
+        totalGastos += gastos.valor;
+        
+    }
+    let totalIngresos = 0; 
+    for (let ingresos of arrayIngresos){
+        totalIngresos += ingresos.valor;
+        
+    } 
+    let balanceTotal = 0;
+    balanceTotal = totalIngresos - totalGastos;
+    document.getElementById("cantidadPresupuesto").innerHTML = balanceTotal + "€";
+
+}
+
 
 function introducirMovimiento () {
     console.log("Funcion introducirMovimiento");
@@ -39,11 +80,14 @@ function introducirMovimiento () {
     }
     else if( signo == "positivo"){
     let descripcion = document.getElementById("descripcionMovimiento").value;
-    let valor = document.getElementById("dineroMovimiento").value;
+    let valorString = document.getElementById("dineroMovimiento").value;
+    let valor = parseFloat(valorString);
 
     let movimiento = new Ingreso (descripcion, valor);
     arrayIngresos.push(movimiento);
 
+    sumarIngresos();
+    balanceTotal();
     mostrarMovimientos();
     restablecerValores();
 
@@ -52,11 +96,14 @@ function introducirMovimiento () {
     else if( signo == "negativo"){
 
     let descripcion = document.getElementById("descripcionMovimiento").value;
-    let valor = document.getElementById("dineroMovimiento").value;
+    let valorString = document.getElementById("dineroMovimiento").value;
+    let valor = parseFloat(valorString);
 
     let movimiento = new Gasto (descripcion, valor);
     arrayGastos.push(movimiento);
 
+    sumarGastos();
+    balanceTotal();
     mostrarMovimientos();
     restablecerValores();
 
