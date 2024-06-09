@@ -16,11 +16,11 @@ function mostrarMovimientos(){
 
 
     for (let ingresos of arrayIngresos){
-        columnasMovimientos[0].innerHTML += '<div class="filaIngreso"><div>' + ingresos.descripcion + '</div><div class="dineroIngreso">+ ' + ingresos.valor + '€</div></div>';
+        columnasMovimientos[0].innerHTML += '<div class="filaIngreso"><div>' + ingresos.descripcion + '</div><div id="dineroYBoton"><div class="dineroIngreso">+ ' + ingresos.valor + '€</div><img class="botonBorrar" onclick="borrarIngreso.call(this)" src="./img/borrar.png" id="' + ingresos.id + '"></div></div>';
     }
 
     for (let gastos of arrayGastos){
-        columnasMovimientos[1].innerHTML += '<div class="filaIngreso"><div>' + gastos.descripcion + '</div><div class="dineroGasto">- ' + gastos.valor + '€</div></div>';
+        columnasMovimientos[1].innerHTML += '<div class="filaIngreso"><div>' + gastos.descripcion + '</div><div id="dineroYBoton"><div class="dineroGasto">- ' + gastos.valor + '€</div><img class="botonBorrar" onclick="borrarGasto.call(this)" src="./img/borrar.png" id="' + gastos.id + '"></div></div>';
     }
 
 }
@@ -109,10 +109,33 @@ function introducirMovimiento () {
 
     console.log(arrayGastos);
         
-    }
-    
+    } 
+}
 
-    
+function borrarIngreso() {
+    let boton = this;
+    let botonID = boton.id;
+
+    let posicion = arrayIngresos.findIndex(ingreso => ingreso.id == botonID);
+    arrayIngresos.splice(posicion,1); 
+
+
+    sumarIngresos();
+    balanceTotal();
+    mostrarMovimientos();
+}
+
+function borrarGasto() {
+    let boton = this;
+    let botonID = boton.id;
+
+    let posicion = arrayGastos.findIndex(gasto => gasto.id == botonID);
+    arrayGastos.splice(posicion,1); 
+
+
+    sumarGastos();
+    balanceTotal();
+    mostrarMovimientos();
 }
 
 document.getElementById("tickAdd").addEventListener("click", introducirMovimiento);
